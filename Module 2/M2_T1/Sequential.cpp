@@ -28,26 +28,20 @@ void multiplyMatrices(const vector<vector<int>> &A, const vector<vector<int>> &B
 }
 
 int main() {
-    // Initialize matrices
     vector<vector<int>> A(N, vector<int>(N));
     vector<vector<int>> B(N, vector<int>(N));
     vector<vector<int>> C(N, vector<int>(N, 0));
 
-    // Generate random matrices
     generateMatrix(A);
     generateMatrix(B);
 
-    // Start timing
     auto start = high_resolution_clock::now();
 
-    // Perform matrix multiplication
     multiplyMatrices(A, B, C);
 
-    // Stop timing
     auto stop = high_resolution_clock::now();
     auto duration = duration_cast<milliseconds>(stop - start);
 
-    // Print execution time
     cout << "Sequential Execution Time: " << duration.count() << " ms" << endl;
 
     return 0;
